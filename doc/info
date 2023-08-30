@@ -1,0 +1,95 @@
+- tuto instal -
+npm : https://www.npmjs.com/
+dockerezing a node js app : https://nodejs.org/fr/docs/guides/nodejs-docker-webapp/
+
+- tuto with video : https://github.com/ThomasOliver545/nestjs-dockerized
+	* first NestJs project + docker + docker compose + Entity
+
+
+ORM doc :
+    - https://orkhan.gitbook.io/typeorm/docs
+        * Create Entity
+        * Migrations for bdd
+        * Used for One to One / One to Many / Many to One / Many to Many relations
+
+Chat :
+    - tuto : https://pusher.com/tutorials/chat-sentiment-analysis-nestjs
+    - API : https://dashboard.pusher.com/
+
+
+api:
+    42 : https://api.intra.42.fr/ 
+		*need token / uid to connect
+
+
+pong : https://devsnap.me/javascript-pong-games
+	*example
+
+
+NestJS:
+    tuto : https://docs.nestjs.com/first-steps
+    cryptage : https://docs.nestjs.com/security/encryption-and-hashing
+    chat : https://gabrieltanner.org/blog/nestjs-realtime-chat
+    Pannel admin : https://nestjs-admin.com/
+
+palette color :
+    - https://coolors.co/262626-acbfa4-e2e8ce-8f4300-8f0000
+	- https://coolors.co/262626-3b6564-50a3a2-73e8b7-8f0000
+
+
+NestJS with Postgres : https://medium.com/@gausmann.simon/nestjs-typeorm-and-postgresql-full-example-development-and-project-setup-working-with-database-c1a2b1b11b8f
+
+docker compose NestJs and Postgres : https://blog.logrocket.com/containerized-development-nestjs-docker/
+Docker compose for Postgres : https://medium.com/analytics-vidhya/getting-started-with-postgresql-using-docker-compose-34d6b808c47c
+
+<!>
+DOC : 
+
+    Start a new project : 
+        NEED:
+            - brew install node
+            - brew install npm
+            - brew install nestjs
+
+        create project:
+            starting by adding the node needed
+                - npm install -g @nestjs/cli
+
+            - nest new <NAME>
+
+        running the server :
+            - npm run start:dev
+
+        to reload modules :
+            - npm run build
+
+        for the bdd with postgres :
+            - npm install --save @nestjs/typeorm typeorm pg 
+            - npm i --save @nestjs/config
+        for Single Page Application (SPA) :
+            - npm install --save @nestjs/serve-static
+        for auth api 42 :
+            - npm i nestjs-oauth2-server
+
+    build docker :
+        - docker build . -t war/app
+        - docker run -p 8080:3000 -d war/app
+        - docker exec -it <container id> /bin/bash
+
+    Create Entity :
+        - nest g module <NAME>
+
+        next create the file with variable
+
+        - cd /src/<NAME> && nest g service <NAME>
+
+        rename the /srv/<NAME>/<NAME>/ by /src/<NAME>/service/ 
+        and configure the file inside
+
+        - nest g controller <NAME>
+
+        rename the /srv/<NAME>/<NAME>/ by /src/<NAME>/controller/ 
+        and configure the file inside
+
+    After :
+        docker-compose up
